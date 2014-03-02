@@ -267,8 +267,8 @@ $lang = array(
     'invoices:invoicedate' => 'Factuurdatum',
     'invoices:file_name' => "Bestandsnaam",
     'invoices:date_created' => "Date Created",
-    'invoices:size' => "Size",
-    'invoices:files' => "Files",
+    'invoices:size' => "Grootte",
+    'invoices:files' => "Bestanden",
     'invoices:sentbutunpaid' => 'Facturen verzonden naar de klant maar nog steeds niet betaald',
     'invoices:duplicated' => 'Factuur #:1 gekopieerd. Het nieuwe factuurnummer is #:2.',
     'invoices:all' => 'Alle facturen',
@@ -402,7 +402,7 @@ $lang = array(
     'projects:project' => 'Project',
     'projects:new_project_from_estimate_without_number' => "Nieuw Project van Inschatting",
     'projects:new_project_from_estimate_with_number' => "Nieuw Project van Inschatting #:1",
-    'projects:due_date' => 'Vervaldag',
+    'projects:due_date' => 'Vervaldatum',
     'projects:is_completed' => 'Voltooid?',
     'projects:manage_project' => 'Beheer Project',
     'projects:areyousuredeletetask' => 'Weet je zeker dat je deze taak wilt verwijderen?',
@@ -698,18 +698,18 @@ Onbetaalde facturen zonder verloopdatum worden weergegeven op basis van de aanma
     'tickets:ticket_options' =>	'Ticket Opties',
     'tickets:attachment' =>	'Bijlage',
     'tickets:updated_status' =>	':1 werkte de ticketstatus bij naar :2',
-    'tickets:add_a_new_ticket' => "Add a New Ticket",
-    'tickets:create_a_new_ticket' => 'Create a New Ticket',
-    'tickets:add_ticket' => 'Add Ticket',
-    'tickets:assign_to_user' => 'Assign To User',
-    'tickets:select_client' => 'Select Client',
-    'tickets:ticket_subject' => 'Ticket Subject',
-    'tickets:ticket_message' => 'Ticket Message',
-    'tickets:ticket_priority' => 'Ticket Priority',
+    'tickets:add_a_new_ticket' => "Toevoegen Nieuwe Ticket",
+    'tickets:create_a_new_ticket' => 'Maak een nieuw ticket',
+    'tickets:add_ticket' => 'Ticket Toevoegen',
+    'tickets:assign_to_user' => 'Toewijzen aan gebruiker',
+    'tickets:select_client' => 'Selecteer Klant',
+    'tickets:ticket_subject' => 'Ticket Onderwerp',
+    'tickets:ticket_message' => 'Ticket Bericht',
+    'tickets:ticket_priority' => 'Ticket Prioriteit',
     'tickets:ticket_status' => 'Ticket Status',
-    'tickets:no_priority' => '-- No priority --',
-    'tickets:no_status' => '-- No status --',
-    'tickets:no_posts' => "Geen bericht.",
+    'tickets:no_priority' => '-- Geen prioriteit --',
+    'tickets:no_status' => '-- Geen status --',
+    'tickets:no_posts' => "Geen berichten.",
 
 	/** End Support Tickets **/
 
@@ -1019,70 +1019,70 @@ Onbetaalde facturen zonder verloopdatum worden weergegeven op basis van de aanma
     
     # v4.0.5
     
-    'invoices:lastreoccurrence' => 'Last Reoccurrence: :1',
+    'invoices:lastreoccurrence' => 'Laatste Herhaling: :1',
     
     # Begin v4.1.2 changes
-    'invoices:converted_to_estimate' => "Converted invoice #:1 to an estimate.",
-    'global:converttoestimate' => 'Convert to Estimate',
+    'invoices:converted_to_estimate' => "Factuur #:1 omgezet naar een inschatting.",
+    'global:converttoestimate' => 'Omzetten naar inschatting',
     # End v4.1.2 changes
     
     # Begin v4.1.3 changes
-    'tickets:view_archived' => "View Archived Tickets",
-    'tickets:view_unarchived' => "View Active Tickets",
-    'tickets:archiving_ticket' => "Archiving ticket",
-    'tickets:unarchiving_ticket' => "Unarchiving ticket",
-    "tickets:unknown_error_ticket_not_altered" => "An unknown error occurred. Your ticket was not altered.",
+    'tickets:view_archived' => "Bekijk Gearchiveerde Tickets",
+    'tickets:view_unarchived' => "Bekijk Actieve Tickets",
+    'tickets:archiving_ticket' => "Gearchiveerde ticket",
+    'tickets:unarchiving_ticket' => "Ongearchiveerde ticket",
+    "tickets:unknown_error_ticket_not_altered" => "Een onbekende foutmelding is opgetreden. De ticket is niet gewijzigd.",
     # End v4.1.3 changes
     
     # Begin v4.1.4 changes
-    "tasks:starting_timer" => "Starting timer",
-    "tasks:stopping_timer" => "Stopping timer",
-    "global:all_comments" => "All Comments",
-    "dashboard:view_all_comments" => "View All Comments",
-    "dashboard:latest_comments" => "Latest Comments",
-    "dashboard:written_by" => "Written by :1 on :2",
-    "dashboard:client_activity" => "Client Activity",
-    "dashboard:view_all_client_activity" => "View All Client Activity",
-    "dashboard:team_activity" => "Team Activity",
-    "dashboard:view_all_team_activity" => "View All Team Activity",
-    "dashboard:my_tasks" => "My Tasks",
-    "dashboard:view_all_my_tasks" => "View All My Tasks",
-    "dashboard:what_the_team_is_working_on" => "What the team is working on.",
+    "tasks:starting_timer" => "Start timer",
+    "tasks:stopping_timer" => "Stop timer",
+    "global:all_comments" => "Alle Reacties",
+    "dashboard:view_all_comments" => "Bekijk Alle Reacties",
+    "dashboard:latest_comments" => "Laatste Reacties",
+    "dashboard:written_by" => "Geschreven door :1 op :2",
+    "dashboard:client_activity" => "Klant Activiteit",
+    "dashboard:view_all_client_activity" => "Bekijk Alle Klant Activiteit",
+    "dashboard:team_activity" => "Team Activiteit",
+    "dashboard:view_all_team_activity" => "Bekijk Alle Team Activiteit",
+    "dashboard:my_tasks" => "Mijn Taken",
+    "dashboard:view_all_my_tasks" => "Bekijk Al Mijn Taken",
+    "dashboard:what_the_team_is_working_on" => "Wat het team aan werkt.",
     # End v4.1.4 changes
     
     # Begin v4.1.6 changes
-    "global:save_milestone" => "Save Milestone",
-    "global:save_task" => "Save Task",
-    "global:private_comment" => "This comment is private. Your client won't see it.",
-    "global:clients_cant_see_private" => "Clients can't see private comments.",
-    "global:is_private" => "Private?",
+    "global:save_milestone" => "Mijlpaal opslaan",
+    "global:save_task" => "Taak opslaan",
+    "global:private_comment" => "Deze reactie is prive. De klant zal deze niet te zien krijgen.",
+    "global:clients_cant_see_private" => "Klanten kunnen geen prive reaties zien.",
+    "global:is_private" => "Prive?",
     # End v4.1.6 changes
     
     # Begin v4.1.7 changes
-    "tickets:disable_client" => "-- Disable Support Tickets --",
+    "tickets:disable_client" => "-- Support Tickets Uitschakelen --",
     # End v4.1.7 changes
     
     # Begin v4.1.8 changes
-    "global:css" => "Custom CSS",
-    "global:js" => "Custom JavaScript",
-    "global:js_explanation" => "You can use jQuery at will. Your code will be added just before &lt;/body&gt;.",
-    "settings:frontend_js" => "Frontend Custom JavaScript",
-    "settings:backend_js" => "Backend Custom JavaScript",
+    "global:css" => "Aangepaste CSS",
+    "global:js" => "Aangepaste JavaScript",
+    "global:js_explanation" => "Je can gebruiken van jQuery. De code word toegevoegd voor &lt;/body&gt;.",
+    "settings:frontend_js" => "Frontend Aangepaste JavaScript",
+    "settings:backend_js" => "Backend Aangepaste JavaScript",
     # End v4.1.8 changes
     
     # Begin v4.1.9 changes
-    "proposals:estimate_number_and_amount" => "Estimate #:1 (:2)",
+    "proposals:estimate_number_and_amount" => "Inschatting #:1 (:2)",
     # End v4.1.9 changes
     
     # Begin v4.1.10 changes
-    "clients:delete" => "Delete Client",
+    "clients:delete" => "Verwijderd Klant",
     # End v4.1.10 changes
     
     # Begin v4.1.11 changes
-    "global:nolongerexists" => "[NO LONGER EXISTS]",
-    "global:billed_amount" => "Billed Amount",
-    "global:unbilled_amount" => "Unbilled Amount",
-    "global:is_billed" => "Billed?"
+    "global:nolongerexists" => "[BESTAAT NIET MEER]",
+    "global:billed_amount" => "Gefactureerd Bedrag",
+    "global:unbilled_amount" => "Nog niet gefactureerd bedrag",
+    "global:is_billed" => "Gefactureerd?"
     # End v4.1.11 changes
     
 );
