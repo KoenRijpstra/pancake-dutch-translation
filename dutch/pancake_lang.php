@@ -1,34 +1,35 @@
-<?php
-
-defined('BASEPATH') OR exit('No direct script access allowed');
+<?php defined('BASEPATH') OR exit('No direct script access allowed');
 /**
  * Pancake
  *
  * A simple, fast, self-hosted invoicing application
  *
  * @package     Pancake
- * @author      Pancake Dev TeamFF
+ * @author      Pancake Dev Team
  * @copyright   Copyright (c) 2010, Pancake Payments
  * @license     http://pancakeapp.com/license
  * @link        http://pancakeapp.com
  * @since       Version 1.0
- * @translated	Peter Ruiter - peterruiter.com
- */
+* @translated Peter Ruiter - peterruiter.com
+* @translated Koen Rijpstra - twitter: @KoenRijpstra
+*/
+ 
 // ------------------------------------------------------------------------
-
+ 
 $lang = array(
-    /** Global Words * */
+    /** Global Words **/
     'global:overview' => 'Overzicht',
     'global:error' => 'Foutmelding',
-    'global:pancakeby7am' => 'Pancake :1 by :2',
+    'global:pancakeby7am' => 'Pancake :1',
     'global:allrelatedmediacopyright' => 'Pancake en alle gerelateerde media is Copyright :1 :2',
     'global:insecure_action' => 'Onveilige actie werd geprobeerd, maar is onderschept',
     'global:disabled_in_demo' => 'Sommige onderdelen op deze pagina zijn uitgeschakeld voor de demo.',
     'global:estimates' => 'Offertes',
-    'global:estimate' => 'Offerte',
+    'global:estimate' => 'Offerte;',
     'global:incomplete_tasks' => 'Incomplete Taken',
     'global:completed_tasks' => 'Voltooide Taken',
     'global:projects' => 'Projecten',
+    'global:tickets' => 'Tickets',
     'global:project' => 'Project',
     'global:upload_failed' => 'Er is een fout opgetreden bij het uploaden van uw bestand. Probeer het opnieuw. Wanneer het probleem blijft bestaan, neem dan contact op met support@pancakeapp.com',
     'global:upload_not_allowed' => 'Het bestandstype van het bestand dat u probeert te uploaden is niet toegestaan. Als u een bestand moet uploaden van dat type, maar er dan eerst een .zip bestand van of een willekeurig ander archiefformaat.',
@@ -36,10 +37,11 @@ $lang = array(
     'global:sentbutunpaid' => 'Openstaand (Verzonden maar niet betaald)',
     'global:task' => 'Taken',
     'global:clients' => 'Klanten',
+    'global:access_denied' => "Toegang geweigerd",
     'global:users' => 'Gebruikers',
     'global:send_to_client' => 'Stuur naar klant',
-    'global:couldnotsendemail' => 'Kon de email niet versturen. Controleer je instellingen.',
-    'global:emailsent' => 'Email is verzonden!',
+    'global:couldnotsendemail' => 'Kon de e-mail niet versturen. Controleer je instellingen.',
+    'global:emailsent' => 'E-mail is verzonden!',
     'global:yes' => 'Ja',
     'global:no' => 'Nee',
     'global:notyetsent' => 'Nog niet verzonden naar klant',
@@ -60,11 +62,13 @@ $lang = array(
     'global:for' => 'voor',
     'global:from' => 'van',
     'global:phone' => 'Telefoon',
-    'global:email' => 'Email',
+    'global:email' => 'E-mail',
     'global:contacts' => 'Contacten',
     'global:week' => 'Wekelijks',
-    'global:quarterly' => 'Kwartaallijks',
+    'global:na'						=> 'N/A',
+    'global:quarterly' => 'Per kwartaal',
     'global:every_six_months' => 'Elke 6 maanden',
+    'global:statistics' => "Statistieken",
     'global:biyearly' => 'Elke 2 jaar',
     'global:month' => 'Maandelijks',
     'global:year' => 'Jaarlijks',
@@ -76,8 +80,8 @@ $lang = array(
     'global:action' => 'Actie',
     'global:items' => 'Items',
     'global:reusableinvoiceitems' => 'Herbruikbare factuur items',
-    'global:reusableinvoiceitems_description' => 'You should use Reusable Invoice Items when you want to reuse the same item in different invoices. To use them when you\'re creating or editing an invoice, simply start typing the name of the item you saved, and it\'ll offer to autocomplete the item\'s details for you.',
-    'global:create_invoice_estimate' => 'Create invoices and estimates to collect money.',
+    'global:reusableinvoiceitems_description' => 'Je moet Herbruikbare factuur ftems gebruiken als je hetzelfde item in een andere facturen wilt gebruiken. Om deze te gebruiken wanneer je een factuur maakt of bewerkt, begin gewoon de naam van het opgeslagen item te typen en het systeem zal je de mogelijkheid bieden om de details van dat item automatisch in te vullen.',
+    'global:create_invoice_estimate' => 'Creeer facturen en schattingen om geld te ontvangen.',
     'global:createinvoice' => 'Factuur aanmaken',
     'global:paid' => 'Betaald',
     'global:unpaid' => 'Niet betaald',
@@ -85,9 +89,12 @@ $lang = array(
     'global:time_entries' => 'Tijdingaves',
     'global:invoices' => 'Facturen',
     'global:invoice' => 'Factuur',
+    'global:tasks' => 'Taken',
     'global:estimate' => 'Offerte',
     'global:dashboard' => 'Dashboard',
     'global:settings' => 'Instellingen',
+    'global:plugins' => 'Plugins',
+    'global:installed' => 'Geinstalleerd',
     'global:changepassword' => 'Wachtwoord veranderen',
     'global:logout' => 'Uitloggen',
     'global:status' => 'Status',
@@ -95,7 +102,7 @@ $lang = array(
     'global:user' => 'Gebruiker',
     'global:title' => 'Titel',
     'global:subtitle' => 'Subtitel',
-    'global:to' => 'Aan',
+    'global:to' => 'Aan (scheid meerdere adressen met een comma)',
     'global:subject' => 'Onderwerp',
     'global:thanks' => 'Hartelijk bedankt!',
     'global:proposals' => 'Voorstellen',
@@ -106,7 +113,7 @@ $lang = array(
     'global:saveandinsert' => 'Opslaan en toevoegen',
     'global:details' => 'Details',
     'global:license_key' => 'Licentie code',
-    'global:version' => 'Versie',
+    'global:version' => 'Versie :1',
     'global:content' => 'Inhoud',
     'global:add' => 'Toevoegen',
     'global:edit' => 'Bewerken',
@@ -122,13 +129,16 @@ $lang = array(
     'global:start' => 'Start',
     'global:stop' => 'Stop',
     'global:start_timer' => 'Start Timer',
+    'estimates:create' => "Nieuwe offerte",
     'global:stop_timer' => 'Stop Timer',
     'global:created' => 'Aangemaakt',
     'global:updated' => 'Bijgewerkt',
     'global:update' => 'Bijwerken',
+    'global:update_available'					=>	':1 update available',
+    'global:updates_available'					=>	':1 updates available',
     'global:downloadpdf' => 'PDF Downloaden',
     'global:yesdelete' => 'Ja, verwijderen!',
-    'global:confirm_emphisised' => 'je kunt dit niet meer ongedaan maken!',
+    'global:confirm_emphisised' => 'Je kunt dit niet meer ongedaan maken!',
     'global:color' => 'Kleur',
     'global:save' => 'Opslaan',
     'global:unknown' => 'Onbekend',
@@ -136,53 +146,92 @@ $lang = array(
     'global:upload_error' => 'Er is een fout opgetreden bij het uploaden van het bestand. Probeer het opnieuw.',
     'global:recurring' => 'Periodiek',
     'global:unsent' => 'Niet verzonden',
+    'global:converttoproject' => 'Wijzigen naar project',
     'global:converttoinvoice' => 'Wijzigen naar factuur',
-    'global:viewpdf' => 'Toon PDF',
+    'global:viewpdf' => 'Bekijk PDF',
     'global:duplicate' => 'Kopieer',
     'global:urltosend' => 'Hier is de URL die u kunt verzenden:',
     'global:copytoclipboard' => 'Kopieer naar plakbord',
     'global:you_need_pancake_cron_job' => 'Om periodiek te factureren dient u de Pancake cronjob te gebruiken.',
     'global:if_you_dont_know_how_to_set_it_up' => 'Indien u niet weet hoe u dit gebruikt kijkt u, <a href="http://help.pancakeapp.com/customer/portal/articles/605703">hier</a>.',
+    'global:quick_links' => 'Snelle Links',
+    'global:view_all' => 'Bekijk alles',
+    'global:deleted' => 'Verwijderd',
+
+    'global:add_more' => "Voeg meer toe",
+    'global:upload_files' => "Upload Bestanden",
     'global:optional_increment' => '<strong>Optioneel</strong> - wordt automatisch verhoogd',
+
     'login:ahoy' => 'Hoi!',
     'login:readytodothis' => 'Klaar om te starten?',
     'login:sup' => 'Hallo?',
     'global:actions' => 'Acties',
+    'global:select' => "--- Select ---",
+
     /** Greetings * */
-    'global:greetings' => array('Hoi!', 'Hallo,', 'He kanjer,', 'Vriend,'),
-    /** End Greetings * */
-    /** Dashboard * */
+    'global:greetings' => array('Hoi!', 'Hallo,', 'Hey daar,', 'Vriend,'),
+    
+        'global:mark_as_unanswered' => 'Mark as unanswered',
+        'global:mark_as_accepted' => 'Mark as accepted',
+        'global:mark_as_rejected' => 'Mark as rejected',
+        'global:reject_estimate' => 'Reject estimate',
+        'global:accept_estimate' => 'Accept estimate',
+        'global:estimate_rejected' => 'Estimate Rejected',
+        "global:estimate_accepted" => "Estimate Accepted",
+        'global:reject_proposal' => 'Reject proposal',
+        'global:accept_proposal' => 'Accept proposal',
+        'global:proposal_rejected' => 'Proposal Rejected',
+        "global:proposal_accepted" => "Proposal Accepted",
+        "global:client_area" => "Client Area",
+        "global:admin" => "Admin",
+        "global:all_settings" => "All Settings",
+        'global:viewable' => 'Viewable in client area',
+        'global:not_viewable' => 'Not viewable in client area',
+        'global:milestones' => "Milestones",
+    
+	/** End Greetings **/
+
+	/** Dashboard **/
     'dashboard:collected' => 'Ontvangen',
     'dashboard:outstanding' => 'Uitstaan',
     'dashboard:latest_activity' => 'Recente activiteit',
+        'dashboard:these_are_your_upcoming_tasks' => "These are your upcoming tasks, :1.",
     'dashboard:upcoming_tasks' => 'Aankomende taken',
-    /** End Dashboard * */
-    /** Users * */
-// ==============================
-// = LOGIN PAGE COMPLETED - Lee =
-// ==============================
-    'login:forgotinstructions' => 'Vul je email adres in zodat wij een email kunnen sturen om het wachtwoord te resetten.',
+	/** End Dashboard **/
+
+
+	/** Users **/
+
+	// ==============================
+	// = LOGIN PAGE COMPLETED - Lee =
+	// ==============================
+    'login:forgotinstructions' => 'Vul a.u.b. je e-mail adres in zodat wij een email kunnen sturen om het wachtwoord te resetten.',
     'login:reset' => 'Reset &raquo;',
     'login:reset' => 'Wachtwoord resetten',
     'login:username' => 'Gebruikersnaam',
     'login:password' => 'Wachtwoord',
     'login:changepassword' => 'Wachtwoord aanpassen',
-    'login:email' => 'Email adres',
+    'login:email' => 'E-mail adres',
     'login:login' => 'Inloggen',
     'login:logout' => 'Uitloggen',
     'login:remember' => 'Onthoud mij',
     'login:forgot' => 'Wachtwoord vergeten?',
     'login:cancel' => '&laquo; Annuleren',
-    /** End Users * */
-    /** Clients * */
+	/** End Users **/
+
+	/** User Groups **/
+    'groups:edit_title'	=> 'Wijzig gebruikersgroep %s',
+    'groups:add_title'	=> 'Toevoegen gebruikersgroep',
+
+	/** Clients **/
     'clients:title' => 'Alle klanten',
     'clients:filter' => 'Klant filter',
     'clients:add' => 'Klant toevoegen',
-    'clients:removefilter' => 'Remove Filter',
+    'clients:removefilter' => 'Verwijder Filter',
     'clients:edit' => 'Klant bewerken',
     'clients:noclienttitle' => 'Je moet eerst een paar klanten invoeren!',
-    'clients:noclientbody' => 'zodat je facturen kunt sturen. Nu eentje toevoegen?',
-    'clients:noclienttitlefilter' => 'No clients match your filter',
+    'clients:noclientbody' => 'Zodat je facturen kunt sturen. Nu eentje toevoegen?',
+    'clients:noclienttitlefilter' => 'Geen enkele klant komt overeen met je filter',
     'clients:hasnoinvoicetitle' => 'Top! Deze klant is ingesteld!',
     'clients:hasnoinvoicebody' => 'Laten we een factuur voor ze aanmaken en betaald krijgen! Nu eentje toevoegen?',
     'clients:added' => 'De klant is toegevoegd!',
@@ -192,13 +241,18 @@ $lang = array(
     'clients:health_check' => 'Gezondheids controle',
     'clients:all' => 'Alle',
     'clients:delete_title' => 'Deze klant verwijderen?!?!',
-    'clients:delete_message' => 'Weet je zeker dat je deze klant wilt verwijderen?<br />Zo ja, dan worden ook de facturen, projecten en alle offerte aanbiedingen van deze klant verwijderd.',
+    'clients:delete_message' => 'Weet je zeker dat je deze klant wilt verwijderen?<br />Zo ja, dan worden ook alle facturen, projecten en offertes van deze klant verwijderd.',
     'clients:clientaction' => '&nbsp;',
     'clients:passphrase' => 'Wachtwoord',
     'clients:bad_passphrase' => 'Wachtwoord is niet correct.',
-    'clients:total_clients' => 'Total Clients',
-    /** End Clients * */
-    /** Contact Log * */
+    'clients:total_clients' => 'Totaal klanten',
+    'clients:support' => 'Support',
+    'clients:support_rates'	=> 'Support tarieven',
+    'clients:edit_support_rates' => 'Instellen tarieven',
+	/** End Clients **/
+
+
+	/** Contact Log **/
     'contact:title' => 'Recente contacthistorie',
     'contact:method' => 'Contactmethode',
     'contact:contact' => 'Contact',
@@ -206,26 +260,34 @@ $lang = array(
     'contact:content' => 'Inhoud',
     'contact:method' => 'Contactmethode',
     'contact:calling_title' => 'Bellen klant ":1"',
-    // 'contact:view_all'		=>	'Toon alle',
-    /** End Contact Log * */
-    /** Invoices * */
+    // 'contact:view_all' => 'Toon alle',
+	/** End Contact Log **/
+
+	/** Invoices **/
     'invoices:markassent' => 'Markeer als verzonden',
     'invoices:invoicedate' => 'Factuurdatum',
+    'invoices:file_name' => "Bestandsnaam",
+    'invoices:date_created' => "Date Created",
+    'invoices:size' => "Size",
+    'invoices:files' => "Files",
     'invoices:sentbutunpaid' => 'Facturen verzonden naar de klant maar nog steeds niet betaald',
     'invoices:duplicated' => 'Factuur #:1 gekopieerd. Het nieuwe factuurnummer is #:2.',
     'invoices:all' => 'Alle facturen',
     'invoices:empty' => 'Nog geen facturen.',
     'invoices:overdue' => 'Achterstallige facturen',
+    'invoices:tax_collected' => "Tax Collected",
     'invoices:paid' => 'Betaalde facturen',
     'invoices:recurringinvoices' => 'Periodieke facturen',
     'invoices:unsentinvoices' => 'Nog niet verzonden facturen',
     'invoices:unpaid' => 'Onbetaalde facturen',
     'invoices:thisinvoicewaspaidon' => 'Deze factuur is betaald op :1. Bedankt!',
     'invoices:senton' => 'Verzonden op :1',
+    'invoices:lastsenton' => 'Laatst verzonden op :1 om :2',
     'invoices:paidon' => 'Betaald op :1',
     'invoices:paidonsingle' => 'Betaald op',
     'invoices:thisinvoiceisunpaid' => 'Deze factuur is nog niet betaald.',
     'invoices:noinvoicetitle' => 'Er zijn nog geen facturen!',
+    'invoices:noinvoicesforthefilteredclient' => "U heeft geen facturen voor :1.",
     'invoices:noinvoicebody' => 'Je kunt nu een factuur aanmaken voor een klant! <br /> Klanten zijn gek op facturen!',
     'invoices:send_now_title' => 'Nu factuur versturen?',
     'invoices:send_now_body' => 'Vul het formulier hieronder in en de factuur wordt door ons afgeleverd.',
@@ -233,10 +295,10 @@ $lang = array(
     'invoices:send_now' => 'Factuur versturen',
     'invoices:timequantity' => 'Tijd/Aantal',
     'invoices:ratewithcurrency' => 'Tarief (:1)',
-    'invoices:taxable' => 'Belastbaar',
+    'invoices:taxable' => 'BTW',
     'invoices:total' => 'Totaal',
     'invoices:amount' => 'Bedrag',
-    'invoices:due' => 'Te betalen voor',
+    'invoices:due' => 'Totaal bedrag te betalen voor',
     'invoices:subtotal' => 'Subtotaal',
     'invoices:totaltax' => 'Totaal BTW',
     'invoices:filestodownload' => 'Bestanden voor Download',
@@ -251,16 +313,17 @@ $lang = array(
     'invoices:is_sent' => 'Verzonden?',
     'invoices:date_entered' => 'Datum aangemaakt',
     'invoices:delete_title' => 'Deze factuur verwijderen?',
-    'invoices:delete_message' => 'Weet je zeker dat je deze factuur wilt verwijderen?',
+    'items:select_time_entry' => 'Tijd binnenkomst',
+    'invoices:delete_message' => 'Weet je zeker dat je deze factuur wilt verwijderen?',	
     'invoices:create' => 'Factuur aanmaken',
     'invoices:edit' => 'Factuur bewerken',
     'invoices:amountrequired' => 'Het bedrag is verplicht',
     'invoices:currencydoesnotexist' => 'Deze valuta bestaat niet.',
     'invoices:unique_id' => 'Uniek ID',
     'invoices:willreoccurin' => 'Deze factuur wordt herhaald op :1.',
-    'invoices:willbesentautomatically' => 'De klant wordt per email op de hoogte gebracht over deze factuur op :1.',
+    'invoices:willbesentautomatically' => 'De klant wordt per e-mail op de hoogte gebracht over deze factuur op :1.',
     'invoices:thisisareoccurrence' => 'Deze factuur is een herhaling van factuur :1.',
-    'invoices:clientlastnotifiedon' => 'De klant is per email geinformeerd over deze factuur op :1.',
+    'invoices:clientlastnotifiedon' => 'De klant is per e-mail geinformeerd over deze factuur op :1.',
     'invoices:simple' => 'Eenvoudig',
     'invoices:simple_help' => 'Een eenvoudige factuur heeft geen extra regels voor producten/diensten. Alleen een totaalbedrag.',
     'invoices:detailed' => 'Gedetailleerd',
@@ -281,19 +344,23 @@ $lang = array(
     'invoices:resend' => 'Factuur opnieuw verzenden',
     'invoices:client_viewed' => ':1 bekeek factuur #:2 op :3',
     'invoices:client_paid' => ':1 betaalde factuur #:2 op :3',
-    /** End Invoices * */
-    /** Estimates * */
-    'estimates:attachedtoproposal' => 'Bijgevoegd bij voorstel #:1',
+    'invoice:paid_amount' => 'Betaald bedrag',
+	/** End Invoices **/
+
+	/** Estimates **/
+    'estimates:attachedtoproposal' => 'Toegevoegd aan voorstel #:1',
     'estimates:duplicated' => 'Offerte #:1 gekopieerd. Het nieuwe offertenummer is #:2.',
     'estimates:alltitle' => 'Alle offertes',
-    'estimates:attachingtoproposal' => 'Offerte op voorstel wordt nu bijgevoegd, moment aub...',
+    'estimates:attachingtoproposal' => 'Offerte wordt nu toegevoegd aan het voorstel, moment aub...',
     'estimates:delete_title' => 'Deze offerte verwijderen?',
     'estimates:delete_message' => 'Weet je zeker dat je deze offerte wilt verwijderen?',
     'estimates:createnew' => 'Nieuwe offerte aanmaken',
     'estimates:generate_estimate' => 'Genereer Offerte',
-    'estimates:converted' => 'Offerte #:1 gewijzigd naar een factuur.',
+    'estimates:converted' => 'Offerte #:1 gewijzigd naar een project.',
+    'estimates:converted_to_invoice' => 'Offerte #:1 gewijzigd naar een factuur.',
     'estimates:noestimatetitle' => 'Er zijn geen offertes',
     'estimates:noestimatesforthisclient' => 'Er zijn geen offertes voor deze klant.',
+    'estimates:noestimatesforthefilteredclient' => "Er zijn geen offertes voor :1.",
     'estimates:deleted' => 'De offerte is verwijderd!',
     'estimates:noestimatebody' => 'Dit zou je eigenlijk nog moeten doen! Wilt je er eentje aanmaken?',
     'estimates:estimatenumber' => 'Offerte #:1',
@@ -310,9 +377,14 @@ $lang = array(
     'estimates:preview' => 'Voortvertoning offerte',
     'estimates:editestimate' => 'Bewerk offerte #:1',
     'estimates:messageupdated' => 'De offerte is bijgewerkt!',
+    'estimates:client_viewed'		=>	':1 viewed <a href=":2">estimate #:3</a> on :4',
+    'estimates:client_accepted'		=>	':1 accepted <a href=":2">estimate #:3</a> on :4',
+    'estimates:client_rejected'		=>	':1 rejected <a href=":2">estimate #:3</a> on :4',
     'estimates:resend' => 'Offerte opnieuw versturen',
-    /** End Estimates * */
-    /** Projects * */
+    'estimates:estimatedate' => 'Offerte datum',
+	/** End Estimates **/
+
+	/** Projects **/
     'projects:status_id' => 'Taak Status',
     'projects:projected' => 'Ingeschat',
     'projects:projected_hours' => 'Ingeschatte uren',
@@ -324,10 +396,15 @@ $lang = array(
     'projects:noprojecttitle' => 'Er zijn nog geen projecten!',
     'projects:noprojecttext' => 'Wilt je er eentje aanmaken? ',
     'projects:add' => 'Nieuw project',
+    'projects:createfromtemplate'	=> 'Nieuw gebaseerd op template',
     'projects:doesnotexist' => 'Het project dat u probeert te bekijken bestaat niet.',
     'projects:edit' => 'Bewerk project',
     'projects:delete' => 'Verwijder project',
     'projects:project' => 'Project',
+    
+        'projects:new_project_from_estimate_without_number' => "New Project from Estimate",
+        'projects:new_project_from_estimate_with_number' => "New Project from Estimate #:1",
+    
     'projects:due_date' => 'Vervaldag',
     'projects:is_completed' => 'Voltooid?',
     'projects:manage_project' => 'Beheer Project',
@@ -341,44 +418,105 @@ $lang = array(
     'projects:archive' => 'Bekijk archief',
     'projects:active' => 'Actieve Projecten',
     'projects:archived' => 'Gearchiveerde Projecten',
-    'projects:noarchivedprojecttitle' => 'U heeft geen gearchiveerde projects.',
+    'projects:noarchivedprojecttitle' => 'U heeft geen gearchiveerde projecten.',
     'projects:noarchivedprojecttext' => 'U kunt een project archiveren vanuit uw projectpagina ',
     'projects:allarchivedtitle' => 'Alle gearchiveerde projecten',
     'projects:templatize' => 'Opslaan als template',
-    /** End Projects * */
-    /** Milestones * */
-    'milestones:add' => 'Toevoegen Milestone',
-    'milestones:edit' => 'Bewerken Milestone',
-    'milestones:delete' => 'Verwijderen Milestone',
-    'milestones:milestone' => 'Milestone',
+    'projects:milestone_identifier' => "[Milestone: :1]",
+	/** End Projects **/
+
+
+	/** Milestones **/
+    'milestones:add' => 'Toevoegen Mijlpaal',
+    'milestones:edit' => 'Bewerken Mijlpaal',
+    'milestones:delete' => 'Verwijderen Mijlpaal',
+    'milestones:milestone' => 'Mijlpaal',
     'milestones:target_date' => 'Geplande afrondingsdatum',
     'milestones:assigned_user' => 'Toegewezen gebruiker',
-    'milestones:select_default' => '-- Geen Milestone --',
-    'milestones:no_milestone' => 'Taken zonder Milestone',
-    'milestones:add_success' => 'Milestone ":1" succesvol toegevoegd!',
-    'milestones:edit_success' => 'Milestone ":1" edited successfully!',
-    'milestones:add_failed' => 'Milestone ":1" kon niet worden toegevoegd.',
-    'milestones:edit_failed' => 'Milestone ":1" could not be added.',
-    'milestones:are_you_sure_delete' => 'Weet u zeker dat u deze Milestone wilt verwijderen?',
-    'milestones:delete_success' => 'Milestone ":1" succesvol verwijderd!',
-    'milestones:does_not_exist' => 'Deze Milestone bestaat niet.',
+    'milestones:select_default' => '-- Geen Mijlpaal --',
+    'milestones:no_milestone' => 'Taken zonder Mijlpaal',
+    'milestones:add_success' => 'Mijlpaal ":1" succesvol toegevoegd!',
+    'milestones:edit_success' => 'Mijlpaal ":1" succesvol bewerkt!',
+    'milestones:add_failed' => 'Mijlpaal ":1" kon niet worden toegevoegd.',
+    'milestones:edit_failed' => 'Mijlpaal ":1" kon niet worden toegevoegd.',
+    'milestones:are_you_sure_delete' => 'Weet u zeker dat u deze Mijlpaal wilt verwijderen?',
+    'milestones:delete_success' => 'Mijlpaal ":1" succesvol verwijderd!',
+    'milestones:does_not_exist' => 'Deze Mijlpaal bestaat niet.',
     'milestones:target_date' => 'Geplande afrondingsdatum',
-    'milestones:select_assignee_default' => 'No Assignee',
-    /** End Milestones * */
-    /** Proposals * */
+    'milestones:select_assignee_default' => 'Geen Opdrachtnemer',
+    /** End Milestones **/
+     
+    /** Proposals **/
     'proposal:outline' => 'Voorstel schema',
-    /** End Proposals * */
-    /** Reports * */
+
+
+    /** End Proposals **/
+
+	/** Reminders **/
+ 
+    'reminders:reminders'	=>	'Herinneringen',
+    'reminders:send'	=>	'Verzend herinneringen',
+    'reminders:success'	=>	'De herinneringen zijn verzonden!!',
+    'reminders:remind'	=> 'Herinner',
+    'reminders:message'	=>	'Bericht',
+    'reminders:due'	=>	'Dagen',
+    'reminders:details'	=>	'Details',
+    'reminders:log'	=>	'Log',
+
+	/** End Reminders **/
+
+
+	/** Email Templates **/
+    'emailtemplates:email_templates'	=> 'E-mail templates',
+    'emailtemplates:create_template'	=>	'Nieuwe template maken',
+    'emailtemplates:add'	=>	'Nieuwe e-mail template maken',
+    'emailtemplates:edit'	=>	'E-mail template bewerken',
+    'emailtemplates:manage'	=>	'Templates beheren',
+    'emailtemplates:name'	=>	'E-mail naam',
+    'emailtemplates:subject'	=>	'E-mail onderwerp',
+    'emailtemplates:days'	=>	'Datumbereik',
+    'emailtemplates:type'	=>	'Template type',
+    'emailtemplates:success'	=>	'E-mail template succesvol aangemaakt',
+    'emailtemplates:edited'	=>	'E-mail template succesvol bewerkt',
+    'emailtemplates:does_not_exist'	=>	'E-mail template bestaat niet',
+    'emailtemplates:deleted'	=>	'E-mail template succesvol verwijderd',
+    'emailtemplates:delete_title'	=>	'Verwijder e-mail template',
+    'emailtemplates:delete_message'	=>	'Weet u zeker dat u deze e-mail template wilt verwijderen?',
+
+
+	/** End Email Templates **/
+
+    /** Reports **/
     'reports:perclient' => 'per klant',
     'reports:datefrom' => 'Van',
     'reports:allclients' => 'Alle klanten',
     'reports:dateto' => 'Aan',
     'reports:byclient' => 'Klant',
+     
     'reports:view' => 'Rapport bekijken',
     'reports:show_all' => 'Toon rapporten',
+    
+    'reports:paid_and_unpaid' => "Paid and Unpaid",
+    'reports:paid_vs_unpaid_over_time' => "Paid vs. Unpaid over time",
+    'reports:per_client' => 'per client',
+    'reports:total_with_tax' => "Total (w/ tax)",
+    'reports:total_without_tax' => "Total (no tax)",
+    'reports:total_collected' => 'Total Collected',
+    'reports:fees_paid' => 'Fees Paid',
+    'reports:total_amount' => 'Total Amount',
+    'reports:paid_amount' => "Paid Amount",
+    'reports:unpaid_amount' => "Unpaid Amount",
+    'reports:client_name' => "Client Name",
+    'reports:filters' => 'Filters',
+    'reports:selection_explanation' => 'Unpaid invoices are shown based on their due date. 
+Paid invoices are shown based on their payment date.
+Invoices with more than one payment part are shown based on the payment date of the first part.
+Unpaid invoices with no due date are shown based on the date they were created.',
+    
     'reports:nodata' => 'Nr :1.',
-    /** End Reports * */
-    /** Currencies * */
+    /** End Reports **/
+ 
+    /** Currencies **/
     'currencies:default' => '[Standaard] :1',
     'currencies:cad' => 'Canadian Dollar',
     'currencies:eur' => 'Euro',
@@ -387,8 +525,9 @@ $lang = array(
     'currencies:hkd' => 'Hong Kong Dollar',
     'currencies:php' => 'Philippine Peso',
     'currencies:zar' => 'South Africa, Rand',
-    /** End Currencies * */
-    /** Proposals * */
+    /** End Currencies ** /
+    
+    /** Proposals **/
     'proposals:duplicated' => 'Voorstel #:1 gekopieerd. Het nieuwe voorstelnummer is #:2.',
     'proposals:usesectiontemplate' => 'Gebruik deze Sectie Template',
     'proposals:showcontents' => 'Toon inhoud',
@@ -396,12 +535,14 @@ $lang = array(
     'proposals:deletepremadesection' => 'Verwijder Sectie Template',
     'proposals:nopremadesections' => 'U heeft geen opgeslagen Sectie Templates.',
     'proposals:newproposal' => 'Nieuw voorstel',
-    'proposals:estimatexfory' => 'Offerte #:1 - :2',
     'proposals:number' => 'Voorstel #',
     'proposals:all' => 'Alle voorstellen',
     'proposals:noproposaltitle' => "Er zijn geen voorstellen!",
     'proposals:noproposalbody' => "Je zou nu een voorstel moeten aanmaken. Echt waar.",
-    'proposals:rejected' => 'Afgewezen op :1',
+    'proposals:client_viewed'		=>	':1 viewed <a href=":2">proposal #:3</a> on :4',
+    'proposals:client_accepted'		=>	':1 accepted <a href=":2">proposal #:3</a> on :4',
+    'proposals:client_rejected'		=>	':1 rejected <a href=":2">proposal #:3</a> on :4',
+	'proposals:rejected' => 'Afgewezen op :1',
     'proposals:accepted' => 'Geaccepteerd op :1',
     'proposals:lastviewed' => 'Recent bekeken door klant op :1, at :2',
     'proposals:neverviewed' => 'niet bekeken door klant',
@@ -420,23 +561,24 @@ $lang = array(
     'proposals:pagexofcount' => 'Pagina :1 van :2',
     'proposals:saving' => 'Bezig met opslaan...',
     'proposals:save' => 'Voorstel opslaan',
-    'proposals:savepremade' => 'Opslaan als sectie template',
+    'proposals:savepremade' => 'Opslaan als Sectie template',
     'proposals:addestimate' => 'Offerte toevoegen',
     'proposals:saved' => 'Opgeslagen!',
-    'proposals:createandedit' => 'Volgende: Voorstel inhoud bewerken',
+    'proposals:createandedit' => 'Volgende: Inhoud van voorstel bewerken',
     'proposals:delete_message' => 'Weet je zeker dat je dit voorstel wil verwijderen?',
-    'proposals:createpremadesection' => 'Toevoegen van sectie template',
+    'proposals:createpremadesection' => 'Toevoegen van Sectie template',
     'proposals:selected_attachments' => 'Selecteer offerte',
     'proposals:attach_selected_estimate' => 'Geselecteerde offerte bijvoegen',
     'proposals:proposal' => 'Voorstel',
     'proposals:status' => 'Status',
     'proposals:view' => 'Toon voorstel',
-    'proposals:estimate' => 'Offete',
-    'proposals:na' => 'N/A',
+    'proposals:estimate' => 'Offerte ',
     'proposals:no_proposals' => 'Er zijn geen voorstellen.',
+    'proposals:proposal_title' => 'Proposal Title',
     'proposals:kitchennotice' => 'Let op: Voorstellen zullen worden getoond in de :1 wanneer de klant de voorstellink heeft bekeken. Dit betekend dat u zoveel wijzigingen kunt doen als u wilt zonder dat de klant het ziet totdat u dat wilt.',
-    /** End Proposals * */
-    /** Tasks * */
+    /** End Proposals **/
+     
+    /** Tasks **/
     'tasks:task' => 'Taak',
     'tasks:edit_succeeded' => 'Taak succesvol gewijzigd.',
     'tasks:hours' => 'Uren',
@@ -454,17 +596,24 @@ $lang = array(
     'tasks:edit' => "Wijzig taak",
     'tasks:create_succeeded' => "De taak is aangemaakt!",
     'tasks:no_task_title' => 'Hmm, nog geen taken...',
+    'tasks:no_task' => "No Task",
     'tasks:no_task_message' => 'Je zou er een paar kunnen maken!',
     'tasks:is_viewable' => 'Tonen in klantgedeelte?',
-    'tasks:no_milestones' => 'Taken zonder milestones',
-    'tasks:not_related_to_a_task' => "-- Niet gerelareerd aan een taak --",
+    'tasks:no_milestones' => 'Taken zonder mijlsteen',
+    'tasks:not_related_to_a_task' => "-- Niet gerelateerd aan een taak --",
     'tasks:select_parent_default' => '-- Geen bovenliggende taak --',
     'tasks:timers_running' => 'Timer loopt',
     'tasks:task_completed_by' => ':1 voltooide taak :2 om :3',
     'tasks:discussion' => 'Discussie: ',
-    /** Users * */
-    'users:create_user' => 'Nieuwe gebruiker',
-    /** Items * */
+    'tasks:billed_hours' => "Gefactureerde uren",
+    'tasks:unbilled_hours' => "Niet gefactureerde uren",
+    
+    
+	/** Users **/
+    'users:create_user' => 'Nieuwe gebruiker aanmaken',
+    'users:confirm_delete_emphasised' => "Er is geen weg terug!",
+
+	/** Items **/
     'items:name' => 'Product/dienst naam',
     'items:description' => 'Product/dienst beschrijving',
     'items:qty_hrs' => 'Aantal / Uren',
@@ -482,19 +631,47 @@ $lang = array(
     'items:type' => 'Type',
     'items:select_standard' => 'Standaard',
     'items:select_expense' => 'Uitgave',
-    'items:add_expense_to_project' => 'Toevoegen Uitgave',
-    /** Transactions * */
+    'items:add_expense_to_project' => 'Toevoegen uitgave',
+    'items:expenses'	=> 'Uitgaven',
+	/** END Items **/
+
+	/** Expenses **/
+    'expenses:expenses'	=>	'Uitgaven',
+    'expenses:add'	=>	'Toevoegen uitgave',
+    'expenses:edit_expense'	=>	'Wijzig uitgave',
+    'expenses:delete'	=>	'Verwijder uitgave',
+    'expenses:deleted'	=>	'Uitgave verwijderd',
+    'expenses:all'	=>	'Alle uitgaven',
+    'expenses:amount'	=>	'Bedrag',
+    'expenses:supplier'	=>	'Leverancier',
+    'expenses:suppliers'	=>	'Leveranciers',
+    'expenses:category'	=>	'Categorie',
+    'expenses:categories'	=>	'Categorieen',
+    'expenses:add_supplier'	=>	'Toevoegen leverancier',
+    'expenses:edit_supplier'	=>	'Wijzig leverancier',
+    'expenses:add_category'	=>	'Toevoegen categorie',
+    'expenses:edit_category'	=>	'Wijzig categorie',
+    'expenses:parent_category'	=>	'Hoofd categorie',
+    'expenses:filter'	=>	'Filter uitgave(n)',
+    'expenses:start_date'	=>	'Startdatum',
+    'expenses:end_date'	=>	'Einddatum',
+
+
+	/** END Expenses **/
+
+	/** Transactions **/
     'transactions:paymentcancelled' => 'Betaling geannuleerd',
     'transactions:extrapaymentcancelled' => 'Uw betaling is geannuleerd.',
     'transactions:paymentreceived' => 'Betaling ontvangen!',
-    'transactions:fee_applied' => 'Gezien :1 een transactie fee oplegt, hebben we een :2% opslag toegevoegd.',
+    'transactions:fee_applied' => 'Gezien :1 transactie kosten oplegt, hebben we een :2% opslag toegevoegd.',
     'transactions:orderbeingprocessed' => 'Moment aub, uw opdracht wordt verwerkt en u wordt doorgestuurd naar de :1 website.',
     'transactions:ifyouarenotredirected' => 'Als u niet automatisch binnen 5 seconden wordt doorgestuurd naar :1 ...',
-    'transactions:thankyouforyourpayment' => 'Hartelijk dank voor uw betaling. U ontvangt zo spoedig mogelijk een ontvangst bevestiging per email.',
-    'transactions:ifyouhavefilesyouwillgetanemail' => 'Als er bestanden zijn die nog aan u afgeleverd moeten worden, ontvangt u een email met de download link.',
-    'transactions:ifyoudonotreceiveemail' => 'Als u binnen een uur geen email hebt ontvangen neem dan contact op met :1',
-    /** End Transactions * */
-    /** Timesheets * */
+    'transactions:thankyouforyourpayment' => 'Hartelijk dank voor uw betaling. U ontvangt zo spoedig mogelijk een ontvangst bevestiging per e-mail.',
+    'transactions:ifyouhavefilesyouwillgetanemail' => 'Als er bestanden zijn die nog aan u geleverd moeten worden, ontvangt u een e-mail met de download link.',
+    'transactions:ifyoudonotreceiveemail' => 'Als u binnen een uur geen e-mail hebt ontvangen neem dan contact op met :1',
+	/** End Transactions **/
+
+	/** Timesheets **/
     'timesheet:taskname' => 'Taak naam',
     'timesheet:starttime' => 'Begintijd',
     'timesheet:endtime' => 'Eindtijd',
@@ -506,18 +683,55 @@ $lang = array(
     'timesheet:for' => 'Tijdrooster voor:',
     'timesheet:totalbillable' => 'Totaal te factureren uren',
     'timesheet:view_pdf' => 'Bekijk tijdrooster (PDF)',
-    /** End Timesheets * */
-    /** Frontend * */
+    'timesheet:user' => 'Gebruiker',
+    'timesheet:entries' => 'Vermeldingen',
+    'timesheet:no_entries' => "Er zijn geen tijdsvermeldingen.",
+	/** End Timesheets **/
+
+
+	/** Support Tickets **/
+ 
+    'tickets:all_tickets' => 'Support tickets',
+        'tickets:support_tickets' => "Support Tickets",
+    'tickets:pending' => 'In afwachting',
+    'tickets:open' => 'Open',
+    'tickets:resolved' => 'Afgehandeld',
+    'tickets:closed' =>	'Gesloten',
+    'tickets:respond' => 'Reageer op ticket',
+    'tickets:ticket_options' =>	'Ticket Opties',
+    'tickets:attachment' =>	'Bijlage',
+    'tickets:updated_status' =>	':1 werkte de ticketstatus bij naar :2',
+    'tickets:add_a_new_ticket' => "Add a New Ticket",
+    'tickets:create_a_new_ticket' => 'Create a New Ticket',
+    'tickets:add_ticket' => 'Add Ticket',
+    'tickets:assign_to_user' => 'Assign To User',
+    'tickets:select_client' => 'Select Client',
+    'tickets:ticket_subject' => 'Ticket Subject',
+    'tickets:ticket_message' => 'Ticket Message',
+    'tickets:ticket_priority' => 'Ticket Priority',
+    'tickets:ticket_status' => 'Ticket Status',
+    'tickets:no_priority' => '-- No priority --',
+    'tickets:no_status' => '-- No status --',
+    'tickets:no_posts' => "Geen bericht.",
+
+	/** End Support Tickets **/
+
+	/** Frontend **/
     'frontend:hithere' => 'Hallo!',
-    'frontend:followthemaillinkdude' => 'Om te zorgen dat u de facturen kunt bekijken moet u op de volledige link klikken die gestuurd is per email. Bijv. :1.',
-    'frontend:contactadminforassistance' => 'Probeer dit eerst of neem contact op :1 @ :2 voor assistentie',
-    /** End Frontend * */
-    /** Settings * */
+    'frontend:followthemaillinkdude' => 'Om te zorgen dat u de facturen kunt bekijken moet u op de volledige link klikken die gestuurd is per e-mail. Bijv. :1.',
+    'frontend:contactadminforassistance' => 'Probeer dit eerst of neem contact op :1 @ :2 voor assistentie.',
+	/** End Frontend **/
+
+	/** Settings **/
+
     'settings:task_statuses' => "Taak Statussen",
+    'settings:ticket_statuses' => "Ticket Statussen",
+    'settings:ticket_priorities' => "Ticket Prioriteiten",
     'settings:background_color' => "Achtergrondkleur",
     'settings:text_color' => "Tekstkleur",
     'settings:text_shadow' => "Tekstschaduw",
     'settings:box_shadow' => "Boxschaduw",
+    'settings:default_rate'	=> "Standaard tarief",
     'settings:allowed_extensions' => 'Toegestande upload extensies',
     'settings:comma_separated' => 'komma-gescheiden',
     'settings:pdf_page_size' => 'PDF Pagina grootte',
@@ -526,9 +740,9 @@ $lang = array(
     'settings:default_invoice_due_date' => 'Standaard vervaldatum',
     'settings:autosave_proposals' => 'Autosave Voorstellen',
     'settings:default_invoice_due_date_explain' => 'dagen nadat de factuur is aangemaakt. Als u geen standaard datum wilt laat u dit veld leeg.',
-    'settings:testemailsettings' => 'Test Email instellingen',
+    'settings:testemailsettings' => 'Test E-mail instellingen',
     'settings:kitchen_route' => 'Klant toegang link voorvoegsel',
-    'settings:kitchen_route_explain' => "(bijv. :1)",
+    'settings:kitchen_route_explain' => "(Voorbeeld. :1)",
     'settings:include_remittance_slip' => 'Overschrijvingsstrook',
     'settings:include_remittance_slip_explain' => "Wanneer aangevinkt zullen de PDF facturen een overschrijvingsstrook bevatten.",
     'settings:items_per_page' => 'Items per pagina',
@@ -543,10 +757,13 @@ $lang = array(
     'settings:whatexporting' => 'Wat bent u aan het exporteren?',
     'settings:nouploadedimportfile' => 'U heeft geen bestand geupload om te importeren.',
     'settings:import' => 'Importeren',
-    'settings:importedclients' => ':1 klanten succesvol geïmporteerd.',
-    'settings:importedinvoices' => ':1 facturen succesvol geïmporteerd.',
-    'settings:importedestimates' => ':1 offertes succesvol geïmporteerd.',
-    'settings:importedtime_entries' => ':1 tijd regels succesvol geïmporteerd.',
+    'settings:importedclients' => ':1 klanten succesvol geimporteerd.',
+    'settings:importedprojects' => ":1 projecten sucessvol geimporteerd.",
+    'settings:importedusers' => ":1 gebruikers succesvol geimporteerd.",
+    'settings:importedinvoices' => ':1 facturen succesvol geimporteerd.',
+    'settings:importedtasks' => ':1 taken succesvol geimporteerd.',
+    'settings:importedestimates' => ':1 offertes succesvol geimporteerd.',
+    'settings:importedtime_entries' => ':1 tijd regels succesvol geimporteerd.',
     'settings:xwereduplicates' => ':1 waren duplicaten en zijn genegeerd.',
     'settings:import_desc' => 'Importeer data naar Pancake.',
     'settings:export' => 'Exporteren',
@@ -558,7 +775,7 @@ $lang = array(
     'settings:logoremoved' => 'Logo verwijderen is gelukt!',
     'settings:save' => 'Instellingen opslaan',
     'settings:logodimensions' => 'Het logo moet 240 x 106 pixels zijn (breedte x hoogte).',
-    'settings:logoformatsallowed' => 'BMP, PNG, JPG (JPEG) en GIF is toegestaan.',
+    'settings:logoformatsallowed' => 'BMP, PNG, JPG (JPEG) en GIF zijn toegestaan.',
     'settings:ftp_user' => 'FTP Gebruiker',
     'settings:ftp_pass' => 'FTP Wachtwoord',
     'settings:ftp_path' => 'FTP Pad',
@@ -569,26 +786,46 @@ $lang = array(
     'settings:uptodate' => 'Pancake is bijgewerkt (:1)',
     'settings:newversionavailable' => 'Er is een nieuwe versie van Pancake beschikbaar (:1)!',
     'settings:updatenow' => 'Nu bijwerken!',
+    'settings:checkforupdates' => "Controleer op updates",
     'settings:youneedtoconfigurefirst' => 'Je Pancake is nog niet geconfigureerd om automatisch te worden bijgewerkt. Vul je FTP gegevens hieronder in en klik op "Instellingen opslaan".<br /> Pancake zal dan worden bijgewerkt.',
     'settings:general' => 'Algemeen',
-    'settings:email_templates' => 'Email templates',
+    'settings:emails'						=> 'Emails',
     'settings:taxes' => 'Belastingen',
     'settings:currencies' => 'Valuta',
     'settings:branding' => 'Huisstijl',
     'settings:payment_methods' => 'Betaal methodes',
     'settings:feeds' => 'Feeds',
     'settings:api_keys' => 'API Keys',
+
+    'settings:time_entry_times' => "Time Entry Times",
+    "settings:include_dates_and_times_in_line_items" => 'Include dates and times in "Time Entry" line item descriptions.',
+    "settings:when_generating_invoice" => "When generating invoices, use a line item per",
+    "settings:use_utf8_font" => "Use UTF-8 font in PDFs",
+    "settings:use_utf8_font_explanation" => "Use this if characters are broken in your PDFs.",
+    "settings:pdf_attachments" => "PDF Attachments",
+    "settings:pdf_attachments_explanation" => "If checked, Pancake will attach the corresponding PDF to invoice, estimate or proposal emails.",
+    "" => "",
+    "" => "",
+    "" => "",
+    "" => "",
+    "" => "",
+    
+    
+    
     'settings:site_name' => 'Site naam',
     'settings:language' => 'Taal',
     'settings:timezone' => 'Tijdzone',
-    'settings:notify_email' => 'Kennisgeving email',
+    'settings:notify_email' => 'Kennisgeving e-mail',
     'settings:currency' => 'Valuta',
     'settings:theme' => 'Frontend thema',
     'settings:admin_theme' => 'Admin thema',
     'settings:admin_name' => 'Admin naam',
     'settings:date_format' => 'Datum notatie',
-    'settings:task_time_interval' => 'Taak tijd Interval',
-    'settings:mailing_address' => 'Mailing adres',
+    'settings:time_format' => "Tijd notatie",
+    'settings:task_time_interval' => 'Taak tijd afronding (Laat leeg voor geen afronding)',
+    'settings:task_time_interval_description' => '(bijv: 00:30 of 0.5 - alle tijd entries worden afgerond naar het dichtstbijzijnde 00:30 wanneer ze worden gefactureerd op een factuur.)',
+    'settings:mailing_address' => 'Postadres',
+     
     'settings:default_subject' => 'Standaard onderwerp',
     'settings:default_contents' => 'Standaard bericht',
     'settings:new_estimate' => 'Nieuwe offerte',
@@ -596,27 +833,36 @@ $lang = array(
     'settings:new_proposal' => 'Nieuw voorstel',
     'settings:paid_notification' => 'Kennisgeving betaling',
     'settings:payment_receipt' => 'Ontvangen betaling',
+    'settings:new_ticket' => 'Nieuwe ticket',
+    'settings:ticket_invoice' => "Nieuwe ticket factuur",
+    'settings:ticket_updated' => 'Ticket bijgewerkt',
+    'settings:ticket_status_updated' => 'Ticket status bijgewerkt',
+    
     'settings:logo' => 'Je logo',
-    'settings:frontend_css' => 'Frontend eigen CSS',
-    'settings:backend_css' => 'Backend eigen CSS',
+    'settings:frontend_css' => 'Frontend Custom CSS',
+    'settings:backend_css' => 'Backend Custom CSS',
+     
     'settings:rss_password' => 'RSS wachtwoord',
     'settings:default_feeds' => 'Standaard feeds',
     'settings:cron_job_feed' => 'Cron Job',
     'settings:feed_generator' => 'Feed Generator',
     'settings:your_link' => 'Je Link',
     'settings:bcc' => 'BCC',
-    'settings:automaticallybccclientemail' => 'Een kopie van alle emails van klanten worden automatisch gestuurd naar het kennisgevings email adres (zoals hierboven is aangegeven)',
+    'settings:automaticallybccclientemail' => 'Een kopie van alle e-mails van klanten worden automatisch gestuurd naar het kennisgevings e-mailadres (zoals hierboven is aangegeven)',
     'settings:api_note' => 'Naam / Notitie',
     'settings:api_key' => 'Key',
+     
     'settings:tax_name' => 'BTW naam',
     'settings:tax_value' => 'Waarde',
     'settings:tax_reg' => 'Registratie / Code',
     'settings:add_tax' => 'Andere belasting toevoegen',
+     
     'settings:currency_name' => 'Valuta naam',
     'settings:currency_code' => 'Valuta code',
     'settings:exchange_rate' => 'Wisselkoers',
     'settings:add_currency' => 'Andere valuta toevoegen',
-    /** End Settings * */
+    /** End Settings **/
+     
     'update:ifyourenotsurecontactus' => "Als je niet zeker weet wat je moet doen <a href='http://pancakeapp.com/forums/newtopic/2/'>start dan een nieuw support onderwerp in het forum</a>.",
     'update:youmodified' => 'Je wijzigde',
     'update:youdeleted' => 'Je verwijderde',
@@ -633,17 +879,19 @@ $lang = array(
     'update:ftp_no_uploads' => 'Pancake Kreeg geen toegang om bestanden te uploaden via FTP.',
     'update:ftp_indexwrong' => 'Het FTP pad wat is opgegeven is onjuist. Het moet een pad zijn naar Pancake\'s directory.',
     'update:ftp_indexnotfound' => 'Het FTP pad wat is opgegeven is onjuist. Het moet een pad zijn naar Pancake\'s directory.',
-    'update:update_conflict' => 'Je moet een aantal bestanden bijwerken sinds de laatste update. Om te zorgen dat je aangepaste bestanden veilig zijn is hier een lijst met bestanden die je hebt aangepast en waarschijnlijk conflicteren met de laatste update.',
+    'update:update_conflict' => 'Je hebt een aantal bestanden bijgewerkt sinds de laatste update. Om te zorgen dat je aangepaste bestanden veilig zijn is hier een lijst met bestanden die je hebt aangepast en waarschijnlijk conflicteren met de laatste update.',
     'update:update_no_perms' => 'Pancake heeft onvoldoende rechten om zichzelf te updaten, en heeft geen toegang tot een FTP account om zichzelf te updaten. Update kan niet doorgaan.',
-    'update:review_files' => 'Lees deze bestanden en maak een backup voordat je verder gaat. Als de upgrade voltooid is kunt je je wijzigingen terugzetten. Vervang niet zomaar de bijgewerkte bestanden door je verouderde kopies, omdat Pancake dan niet meer goed werkt.',
-    'update:internetissues' => "Pancake kan geen verbinding maken met internet.",
-    'update:pancakeneedsinternet' => 'Om Pancake goed te laten functioneren, moet je server het toestaan om informatie van het internet te halen.',
+    'update:review_files' => 'Bekijk deze bestanden en maak een backup voordat je verder gaat. Als de upgrade voltooid is kunt je je wijzigingen terugzetten. Vervang niet zomaar de bijgewerkte bestanden door je verouderde kopieen, omdat Pancake dan niet meer goed werkt.',
+    'update:internetissues' => "Pancake kan geen verbinding maken met het internet.",
+    'update:pancakeneedsinternet' => 'Om Pancake goed te laten functioneren, moet je server toestaan om informatie van het internet te halen.',
     'update:maybefirewall' => "Het lijkt erop dat je server Pancake geen toegang tot internet geeft. Dit kan komen door een firewall probleem op je server. Neem hiervoor contact op met je hosting provider. Vraag om PHP toegang tot manage.pancakeapp.com.",
     'update:nointernetaccess' => 'Geen internet toegang',
     'update:pancakeupdated' => 'Pancake is bijgewerkt van :1 naar :2',
-    /** Action Logger  * */
-    /** End Action Logger * */
-    /** Partial Payments * */
+    /** Action Logger **/
+     
+    /** End Action Logger **/
+     
+    /** Partial Payments **/
     'partial:partialpayments' => 'Betalingsplan',
     'partial:totalamounttobepaid' => "Totaalbedrag te betalen door klant",
     'partial:amountlefttobeadded' => "Bedrag over om toe te voegen aan betalingsplan",
@@ -651,9 +899,9 @@ $lang = array(
     'partial:noamountneeded' => "Uw betalingsplan is compleet.",
     'partial:amount' => 'Bedrag',
     'partial:add_payment' => 'Toevoegen betaling',
-    'partial:dueon' => 'Verschuldigd op',
+    'partial:dueon' => 'Te betalen voor',
     'partial:addanother' => 'Voeg een ander deel aan deze betaling toe',
-    'partial:disabledforrecurring' => 'Herhaling facturen zijn beperkt tot een deel van de betalingen',
+    'partial:disabledforrecurring' => 'Periodieke facturen zijn beperkt tot een deel van de betalingen',
     'partial:paymentdetails' => 'Betalingsgegevens',
     'partial:wrongtotal' => 'De som van alle onderdelen van je betalingsplan komt niet overeen met het totaal bedrag van de facturatie.',
     'partial:problemsaving' => 'Er is een fout opgetreden tijdens het opslaan van het betalingsplan. Probeer het nogmaals.',
@@ -663,28 +911,30 @@ $lang = array(
     'partial:partpaidthanks' => "Dit deel van de factuur is betaald. Hartelijk dank.",
     'partial:proceedtopayment' => 'Overgaan tot betaling',
     'partial:topaynowgoto' => 'Om direct te betalen ga naar :1',
-    'partial:dueondate' => 'Verschuldigd op :1',
+    'partial:pay_part_x_now' => "Pay part #:1 of your invoice now",
+    'partial:dueondate' => 'Te betalen voor :1',
     'partial:paymentmethod' => 'Betalingsmethode',
     'partial:paymentdate' => 'Datum betaling',
     'partial:paymentstatus' => 'Status betaling',
     'partial:transactionid' => 'Transactie ID',
     'partial:markaspaid' => 'Markeren als betaald',
     'partial:transactionfee' => 'Transactiekosten',
-    /** End Partial Payments * */
-    /** Payment Gateways * */
-    'paypal:clickhere' => 'Klik hier',
+    /** End Partial Payments **/
+
+    /** Payment Gateways **/
+    'paypal:clickhere' => 'Klik hier om verder te gaan',
     'authorize:transaction_key' => 'Transactie Key',
-    'paypal:email' => 'PayPal Email',
-    'paypal:fee' => 'PayPal Fee (%)',
+    'paypal:email' => 'PayPal E-mail',
+    'paypal:fee' => 'PayPal Kosten (%)',
     'paypalpro:paypalpro' => 'PayPal Payments Pro',
-    'paypalpro:viacreditcard' => 'Pay via Credit Card',
+    'paypalpro:viacreditcard' => 'Betaal via Credit Card',
     'cash:cash' => 'Contant',
     'check:check' => 'Cheque',
     'moneyorder:moneyorder' => 'Money Order',
     'creditcard:creditcard' => 'CreditCard',
-    'banktransfer:banktransfer' => 'Overschrijving',
+    'banktransfer:banktransfer' => 'Bankoverschrijving',
     'gateways:errorupdating' => 'Er is een fout opgetreden tijdens het bijwerken van de instellingen van je betalingsmethode. Neem contact op met support.',
-    'gateways:paymentmethods' => 'Betalingsmethodes',
+    'gateways:paymentmethods' => 'Betalingsmethoden',
     'gateways:selectpaymentmethod' => 'Selecteer betalingsmethode',
     'gateways:nogatewayused' => 'Geen methode gebruikt: Deel is niet betaald',
     'gateways:completed' => 'Voltooid',
@@ -697,19 +947,23 @@ $lang = array(
     'gateways:cc_type' => 'CreditCard type',
     'gateways:cc_number' => 'CreditCard nummer',
     'gateways:cc_exp' => 'Vervaldatum',
+    'gateways:cc_cardholder' => 'Naam op de card',
     'gateways:cc_code' => 'CVV Code',
     'gateways:payment_details' => 'Betalingsdetails',
     'gateways:api_signature' => 'API handtekening',
     'gateways:api_password' => 'API wachtwoord',
     'gateways:api_username' => 'API gebruikersnaam',
-    /** End Payment Gateways * */
-    /** Kitchen Area * */
+    /** End Payment Gateways **/
+     
+    /** Kitchen Area **/
     'kitchen:edit_comment' => 'Wijzig reactie',
+    'kitchen:add_a_comment' => "Add a comment",
     'kitchen:kitchen_name' => 'Klantgedeelte',
-    'kitchen:pleaselogin' => 'Geef aub uw wachtwoord om toegang te krijgen tot uw account',
+    'kitchen:pleaselogin' => 'Vul a.u.b. uw wachtwoord in om toegang te krijgen tot uw account',
     'kitchen:nocomments' => 'Er zijn nog geen reacties.',
     'kitchen:comment' => 'Reactie',
     'kitchen:comments' => 'Reacties',
+    'kitchen:comments_x'                            => 'Comments (:1)',
     'kitchen:file' => 'Bestand',
     'kitchen:submitcomment' => 'Nieuwe reactie',
     'kitchen:attachment' => 'Bijlage',
@@ -725,8 +979,122 @@ $lang = array(
     'kitchen:nopassphrase' => 'Momenteel is het "wachtwoord" van de klant niet ingesteld. Dit betekend dat ze gewoon toegang hebben via de URL en dus geen wachtwoord nodig hebben om hun klantgedeelte te benaderen. Als u dit gedeelte toch wilt beveiligen met een simpel wachtwoord kunt u de klant bewerken en daar een wachtwoord instellen.',
     'kitchen:passphraseset' => 'Deze klant heeft een wachtwoord ingesteld',
     'kitchen:passphrase' => 'Wachtwoord',
-    'kitchen:description' => 'Dit is de url om naar uw klant te zenden om ze toegang te geven tot het klantgedeelte waar ze projecten, facturen, etc.. kunnen bekijken.',
-        /** END Kitchen Area * */
+    'kitchen:description' => 'Dit is de url om naar uw klant te zenden om ze toegang te geven tot het klantgedeelte waar ze projecten, facturen, etc. kunnen bekijken.',
+    'kitchen:people_in_discussion'	=> 'Mensen in discussie',
+    
+    'kitchen:latest_invoice' => 'Latest Invoice',
+    'kitchen:unpaid_balance' => 'Unpaid Balance: :1',
+    'kitchen:total_paid_to_date' => 'Total Paid To Date: :1',
+
+    /** END Kitchen Area **/
+
+    'store:store' => 'Store',
+    'store:buy' => "Koop ($:1)",
+    'store:update' => "Bijwerken",
+    'store:install' => "Installeren",
+    'store:settings' => "Instellingen",
+    'store:already_bought' => "Je hebt dit item al gekocht!",
+    'store:installed_successfully' => "Je hebt de :1 :2 succesvol geinstalleerd.",
+    'store:plugin' => "Plugin",
+    'store:payment_gateway' => "Payment Gateway",
+    'store:frontend_theme' => "Frontend Thema",
+    'store:backend_theme' => "Backend Thema",
+    'store:unknown' => "Onbekend",
+    'store:updatestoreitems' => "Store items bijwerken",
+    'store:download_free' => "Download (GRATIS)",
+    'store:error1000' => "Je authorisatie token is niet langer geldig. Je moet je betaal gegevens nogmaals invoeren in pancakeapp.com.",
+    'store:error1001' => "Je hebt dit item al gekocht!",
+    'store:error1002' => "Er is een probleem opgetreden bij het afschrijven op je creditcard. Probeer het later opnieuw.",
+    'store:error1003' => "Je hebt een ongeldig verzoek gedaan.",
+    
+    'email_templates:new_invoice' => 'New Invoice',
+    'email_templates:new_estimate' => 'New Estimate',
+    'email_templates:new_proposal' => 'New Proposal',
+    'email_templates:invoice_payment_notification_for_admin' => 'Payment Notification (sent to admin)',
+    'email_templates:invoice_payment_notification_for_client' => 'Payment Receipt Notification (sent to client)',
+    'email_templates:new_ticket' => 'New Ticket',
+    'email_templates:new_ticket_invoice' => 'New Ticket Invoice',
+    'email_templates:ticket_updated' => 'Ticket Update Notification',
+    'email_templates:ticket_status_updated' => 'Ticket Status Update Notification',
+    'email_templates:assigned_to_task' => "Task Assignment Notification",
+    'email_templates:assigned_to_milestone' => "Milestone Assignment Notification",
+    'email_templates:new_comment' => "New Comment Notification",
+    
+    'global:timer_app' => "Pancake Timer App",
+    
+    /** Dashboard **/
+
+
+	/** END Dashboard **/
+    
+    # v4.0.5
+    
+    'invoices:lastreoccurrence' => 'Last Reoccurrence: :1',
+    
+    # Begin v4.1.2 changes
+    'invoices:converted_to_estimate' => "Converted invoice #:1 to an estimate.",
+    'global:converttoestimate' => 'Convert to Estimate',
+    # End v4.1.2 changes
+    
+    # Begin v4.1.3 changes
+    'tickets:view_archived' => "View Archived Tickets",
+    'tickets:view_unarchived' => "View Active Tickets",
+    'tickets:archiving_ticket' => "Archiving ticket",
+    'tickets:unarchiving_ticket' => "Unarchiving ticket",
+    "tickets:unknown_error_ticket_not_altered" => "An unknown error occurred. Your ticket was not altered.",
+    # End v4.1.3 changes
+    
+    # Begin v4.1.4 changes
+    "tasks:starting_timer" => "Starting timer",
+    "tasks:stopping_timer" => "Stopping timer",
+    "global:all_comments" => "All Comments",
+    "dashboard:view_all_comments" => "View All Comments",
+    "dashboard:latest_comments" => "Latest Comments",
+    "dashboard:written_by" => "Written by :1 on :2",
+    "dashboard:client_activity" => "Client Activity",
+    "dashboard:view_all_client_activity" => "View All Client Activity",
+    "dashboard:team_activity" => "Team Activity",
+    "dashboard:view_all_team_activity" => "View All Team Activity",
+    "dashboard:my_tasks" => "My Tasks",
+    "dashboard:view_all_my_tasks" => "View All My Tasks",
+    "dashboard:what_the_team_is_working_on" => "What the team is working on.",
+    # End v4.1.4 changes
+    
+    # Begin v4.1.6 changes
+    "global:save_milestone" => "Save Milestone",
+    "global:save_task" => "Save Task",
+    "global:private_comment" => "This comment is private. Your client won't see it.",
+    "global:clients_cant_see_private" => "Clients can't see private comments.",
+    "global:is_private" => "Private?",
+    # End v4.1.6 changes
+    
+    # Begin v4.1.7 changes
+    "tickets:disable_client" => "-- Disable Support Tickets --",
+    # End v4.1.7 changes
+    
+    # Begin v4.1.8 changes
+    "global:css" => "Custom CSS",
+    "global:js" => "Custom JavaScript",
+    "global:js_explanation" => "You can use jQuery at will. Your code will be added just before &lt;/body&gt;.",
+    "settings:frontend_js" => "Frontend Custom JavaScript",
+    "settings:backend_js" => "Backend Custom JavaScript",
+    # End v4.1.8 changes
+    
+    # Begin v4.1.9 changes
+    "proposals:estimate_number_and_amount" => "Estimate #:1 (:2)",
+    # End v4.1.9 changes
+    
+    # Begin v4.1.10 changes
+    "clients:delete" => "Delete Client",
+    # End v4.1.10 changes
+    
+    # Begin v4.1.11 changes
+    "global:nolongerexists" => "[NO LONGER EXISTS]",
+    "global:billed_amount" => "Billed Amount",
+    "global:unbilled_amount" => "Unbilled Amount",
+    "global:is_billed" => "Billed?"
+    # End v4.1.11 changes
+    
 );
 
 /** End of file: pancake_lang.php **/
