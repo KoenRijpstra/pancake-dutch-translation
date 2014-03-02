@@ -17,6 +17,7 @@
 // ------------------------------------------------------------------------
  
 $lang = array(
+
     /** Global Words **/
     'global:overview' => 'Overzicht',
     'global:error' => 'Foutmelding',
@@ -65,7 +66,7 @@ $lang = array(
     'global:email' => 'E-mail',
     'global:contacts' => 'Contacten',
     'global:week' => 'Wekelijks',
-    'global:na'						=> 'N/A',
+    'global:na' => 'N/A',
     'global:quarterly' => 'Per kwartaal',
     'global:every_six_months' => 'Elke 6 maanden',
     'global:statistics' => "Statistieken",
@@ -134,8 +135,8 @@ $lang = array(
     'global:created' => 'Aangemaakt',
     'global:updated' => 'Bijgewerkt',
     'global:update' => 'Bijwerken',
-    'global:update_available'					=>	':1 update available',
-    'global:updates_available'					=>	':1 updates available',
+    'global:update_available' => ':1 update beschikbaar',
+    'global:updates_available' => ':1 updates beschikbaar',
     'global:downloadpdf' => 'PDF Downloaden',
     'global:yesdelete' => 'Ja, verwijderen!',
     'global:confirm_emphisised' => 'Je kunt dit niet meer ongedaan maken!',
@@ -166,36 +167,34 @@ $lang = array(
     'login:readytodothis' => 'Klaar om te starten?',
     'login:sup' => 'Hallo?',
     'global:actions' => 'Acties',
-    'global:select' => "--- Select ---",
+    'global:select' => "--- Selecteer ---",
 
     /** Greetings * */
     'global:greetings' => array('Hoi!', 'Hallo,', 'Hey daar,', 'Vriend,'),
-    
-        'global:mark_as_unanswered' => 'Mark as unanswered',
-        'global:mark_as_accepted' => 'Mark as accepted',
-        'global:mark_as_rejected' => 'Mark as rejected',
-        'global:reject_estimate' => 'Reject estimate',
-        'global:accept_estimate' => 'Accept estimate',
-        'global:estimate_rejected' => 'Estimate Rejected',
-        "global:estimate_accepted" => "Estimate Accepted",
-        'global:reject_proposal' => 'Reject proposal',
-        'global:accept_proposal' => 'Accept proposal',
-        'global:proposal_rejected' => 'Proposal Rejected',
-        "global:proposal_accepted" => "Proposal Accepted",
-        "global:client_area" => "Client Area",
-        "global:admin" => "Admin",
-        "global:all_settings" => "All Settings",
-        'global:viewable' => 'Viewable in client area',
-        'global:not_viewable' => 'Not viewable in client area',
-        'global:milestones' => "Milestones",
-    
+    'global:mark_as_unanswered' => 'Markeer als onbeantwoord',
+    'global:mark_as_accepted' => 'Markeer als geaccepteerd',
+    'global:mark_as_rejected' => 'Markeer als afgewezen',
+    'global:reject_estimate' => 'Inschatting afwijzen',
+    'global:accept_estimate' => 'Inschatting accepteren',
+    'global:estimate_rejected' => 'Inschatting afgewezen',
+    'global:estimate_accepted' => 'Inschatting geaccepteerd',
+    'global:reject_proposal' => 'Voorstel afwijzen',
+    'global:accept_proposal' => 'Voorstel accepteren',
+    'global:proposal_rejected' => 'Voorstel afgewezen',
+    'global:proposal_accepted' => 'Voorstel geaccepteerd',
+    'global:client_area' => 'Klantengedeelte',
+    'global:admin' => 'Admin',
+    'global:all_settings' => 'Alle Instellingen',
+    'global:viewable' => 'Zichtbaar in klantgedeelte',
+    'global:not_viewable' => 'Niet zichtbaar in klantgedeelte',
+    'global:milestones' => 'Mijlpalen',
 	/** End Greetings **/
 
 	/** Dashboard **/
     'dashboard:collected' => 'Ontvangen',
     'dashboard:outstanding' => 'Uitstaan',
     'dashboard:latest_activity' => 'Recente activiteit',
-        'dashboard:these_are_your_upcoming_tasks' => "These are your upcoming tasks, :1.",
+    'dashboard:these_are_your_upcoming_tasks' => "These are your upcoming tasks, :1.",
     'dashboard:upcoming_tasks' => 'Aankomende taken',
 	/** End Dashboard **/
 
@@ -525,8 +524,8 @@ Unpaid invoices with no due date are shown based on the date they were created.'
     'currencies:hkd' => 'Hong Kong Dollar',
     'currencies:php' => 'Philippine Peso',
     'currencies:zar' => 'South Africa, Rand',
-    /** End Currencies ** /
-    
+    /** End Currencies **/
+
     /** Proposals **/
     'proposals:duplicated' => 'Voorstel #:1 gekopieerd. Het nieuwe voorstelnummer is #:2.',
     'proposals:usesectiontemplate' => 'Gebruik deze Sectie Template',
