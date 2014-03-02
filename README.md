@@ -3,8 +3,9 @@ pancake-dutch-translation
 
 Dutch translation for Pancake
 
-Compatible with version 4.1.12 of Pancake but not fully translated yet
+Compatible with version 4.1.12 of Pancake.
 
+If you have any suggestions and/or corrections please create a new [issue](https://github.com/KoenRijpstra/pancake-dutch-translation/issues/new) or pull request.
 
 Installation
 ============
