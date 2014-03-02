@@ -194,7 +194,7 @@ $lang = array(
     'dashboard:collected' => 'Ontvangen',
     'dashboard:outstanding' => 'Uitstaan',
     'dashboard:latest_activity' => 'Recente activiteit',
-    'dashboard:these_are_your_upcoming_tasks' => "These are your upcoming tasks, :1.",
+    'dashboard:these_are_your_upcoming_tasks' => "Dit zijn je aankomende taken, :1.",
     'dashboard:upcoming_tasks' => 'Aankomende taken',
 	/** End Dashboard **/
 
@@ -274,7 +274,7 @@ $lang = array(
     'invoices:all' => 'Alle facturen',
     'invoices:empty' => 'Nog geen facturen.',
     'invoices:overdue' => 'Achterstallige facturen',
-    'invoices:tax_collected' => "Tax Collected",
+    'invoices:tax_collected' => "BTW Ontvangen",
     'invoices:paid' => 'Betaalde facturen',
     'invoices:recurringinvoices' => 'Periodieke facturen',
     'invoices:unsentinvoices' => 'Nog niet verzonden facturen',
@@ -376,9 +376,9 @@ $lang = array(
     'estimates:preview' => 'Voortvertoning offerte',
     'estimates:editestimate' => 'Bewerk offerte #:1',
     'estimates:messageupdated' => 'De offerte is bijgewerkt!',
-    'estimates:client_viewed'		=>	':1 viewed <a href=":2">estimate #:3</a> on :4',
-    'estimates:client_accepted'		=>	':1 accepted <a href=":2">estimate #:3</a> on :4',
-    'estimates:client_rejected'		=>	':1 rejected <a href=":2">estimate #:3</a> on :4',
+    'estimates:client_viewed'		=>	':1 bekeken <a href=":2">inschatting #:3</a> op :4',
+    'estimates:client_accepted'		=>	':1 geaccepteerde <a href=":2">inschatting #:3</a> op :4',
+    'estimates:client_rejected'		=>	':1 afgewezen <a href=":2">inschatting #:3</a> op :4',
     'estimates:resend' => 'Offerte opnieuw versturen',
     'estimates:estimatedate' => 'Offerte datum',
 	/** End Estimates **/
@@ -400,10 +400,8 @@ $lang = array(
     'projects:edit' => 'Bewerk project',
     'projects:delete' => 'Verwijder project',
     'projects:project' => 'Project',
-    
-        'projects:new_project_from_estimate_without_number' => "New Project from Estimate",
-        'projects:new_project_from_estimate_with_number' => "New Project from Estimate #:1",
-    
+    'projects:new_project_from_estimate_without_number' => "Nieuw Project van Inschatting",
+    'projects:new_project_from_estimate_with_number' => "Nieuw Project van Inschatting #:1",
     'projects:due_date' => 'Vervaldag',
     'projects:is_completed' => 'Voltooid?',
     'projects:manage_project' => 'Beheer Project',
@@ -421,7 +419,7 @@ $lang = array(
     'projects:noarchivedprojecttext' => 'U kunt een project archiveren vanuit uw projectpagina ',
     'projects:allarchivedtitle' => 'Alle gearchiveerde projecten',
     'projects:templatize' => 'Opslaan als template',
-    'projects:milestone_identifier' => "[Milestone: :1]",
+    'projects:milestone_identifier' => "[Mijlpaal: :1]",
 	/** End Projects **/
 
 
@@ -495,22 +493,22 @@ $lang = array(
     'reports:view' => 'Rapport bekijken',
     'reports:show_all' => 'Toon rapporten',
     
-    'reports:paid_and_unpaid' => "Paid and Unpaid",
-    'reports:paid_vs_unpaid_over_time' => "Paid vs. Unpaid over time",
-    'reports:per_client' => 'per client',
-    'reports:total_with_tax' => "Total (w/ tax)",
-    'reports:total_without_tax' => "Total (no tax)",
-    'reports:total_collected' => 'Total Collected',
-    'reports:fees_paid' => 'Fees Paid',
-    'reports:total_amount' => 'Total Amount',
-    'reports:paid_amount' => "Paid Amount",
-    'reports:unpaid_amount' => "Unpaid Amount",
-    'reports:client_name' => "Client Name",
+    'reports:paid_and_unpaid' => "Betaald en Onbetaald",
+    'reports:paid_vs_unpaid_over_time' => "Betaald vs. Onbetaald over periode",
+    'reports:per_client' => 'per klant',
+    'reports:total_with_tax' => "Totaal (Incl. BTW)",
+    'reports:total_without_tax' => "Totaal (Excl. BTW)",
+    'reports:total_collected' => 'Totaal Ontvangen',
+    'reports:fees_paid' => 'Betaalde Toeslagen',
+    'reports:total_amount' => 'Totaal Bedrag',
+    'reports:paid_amount' => "Betaald Bedrag",
+    'reports:unpaid_amount' => "Onbetaald Bedrag",
+    'reports:client_name' => "Klant Naam",
     'reports:filters' => 'Filters',
-    'reports:selection_explanation' => 'Unpaid invoices are shown based on their due date. 
-Paid invoices are shown based on their payment date.
-Invoices with more than one payment part are shown based on the payment date of the first part.
-Unpaid invoices with no due date are shown based on the date they were created.',
+    'reports:selection_explanation' => 'Onbetaalde facturen worden weergegeven op basis van de verloopdatum. 
+Betaalde facturen worden weergegeven op basis van de betaaldatum.
+Facturen met een betaalingsplan bestaand uit meerdere delen worden weergegeven op basis van de betaaldatum van het eerste deel.
+Onbetaalde facturen zonder verloopdatum worden weergegeven op basis van de aanmaakdatum.',
     
     'reports:nodata' => 'Nr :1.',
     /** End Reports **/
@@ -538,9 +536,9 @@ Unpaid invoices with no due date are shown based on the date they were created.'
     'proposals:all' => 'Alle voorstellen',
     'proposals:noproposaltitle' => "Er zijn geen voorstellen!",
     'proposals:noproposalbody' => "Je zou nu een voorstel moeten aanmaken. Echt waar.",
-    'proposals:client_viewed'		=>	':1 viewed <a href=":2">proposal #:3</a> on :4',
-    'proposals:client_accepted'		=>	':1 accepted <a href=":2">proposal #:3</a> on :4',
-    'proposals:client_rejected'		=>	':1 rejected <a href=":2">proposal #:3</a> on :4',
+    'proposals:client_viewed'		=>	':1 bekeken <a href=":2">voorstel #:3</a> op :4',
+    'proposals:client_accepted'		=>	':1 geaccepteerd <a href=":2">voorstel #:3</a> op :4',
+    'proposals:client_rejected'		=>	':1 afgewezen <a href=":2">voorstel #:3</a> op :4',
 	'proposals:rejected' => 'Afgewezen op :1',
     'proposals:accepted' => 'Geaccepteerd op :1',
     'proposals:lastviewed' => 'Recent bekeken door klant op :1, at :2',
@@ -573,7 +571,7 @@ Unpaid invoices with no due date are shown based on the date they were created.'
     'proposals:view' => 'Toon voorstel',
     'proposals:estimate' => 'Offerte ',
     'proposals:no_proposals' => 'Er zijn geen voorstellen.',
-    'proposals:proposal_title' => 'Proposal Title',
+    'proposals:proposal_title' => 'Voorstel Titel',
     'proposals:kitchennotice' => 'Let op: Voorstellen zullen worden getoond in de :1 wanneer de klant de voorstellink heeft bekeken. Dit betekend dat u zoveel wijzigingen kunt doen als u wilt zonder dat de klant het ziet totdat u dat wilt.',
     /** End Proposals **/
      
@@ -595,7 +593,7 @@ Unpaid invoices with no due date are shown based on the date they were created.'
     'tasks:edit' => "Wijzig taak",
     'tasks:create_succeeded' => "De taak is aangemaakt!",
     'tasks:no_task_title' => 'Hmm, nog geen taken...',
-    'tasks:no_task' => "No Task",
+    'tasks:no_task' => "Geen Taak",
     'tasks:no_task_message' => 'Je zou er een paar kunnen maken!',
     'tasks:is_viewable' => 'Tonen in klantgedeelte?',
     'tasks:no_milestones' => 'Taken zonder mijlsteen',
@@ -691,7 +689,7 @@ Unpaid invoices with no due date are shown based on the date they were created.'
 	/** Support Tickets **/
  
     'tickets:all_tickets' => 'Support tickets',
-        'tickets:support_tickets' => "Support Tickets",
+    'tickets:support_tickets' => "Support Tickets",
     'tickets:pending' => 'In afwachting',
     'tickets:open' => 'Open',
     'tickets:resolved' => 'Afgehandeld',
@@ -788,7 +786,7 @@ Unpaid invoices with no due date are shown based on the date they were created.'
     'settings:checkforupdates' => "Controleer op updates",
     'settings:youneedtoconfigurefirst' => 'Je Pancake is nog niet geconfigureerd om automatisch te worden bijgewerkt. Vul je FTP gegevens hieronder in en klik op "Instellingen opslaan".<br /> Pancake zal dan worden bijgewerkt.',
     'settings:general' => 'Algemeen',
-    'settings:emails'						=> 'Emails',
+    'settings:emails' => 'Emails',
     'settings:taxes' => 'Belastingen',
     'settings:currencies' => 'Valuta',
     'settings:branding' => 'Huisstijl',
@@ -796,21 +794,14 @@ Unpaid invoices with no due date are shown based on the date they were created.'
     'settings:feeds' => 'Feeds',
     'settings:api_keys' => 'API Keys',
 
-    'settings:time_entry_times' => "Time Entry Times",
-    "settings:include_dates_and_times_in_line_items" => 'Include dates and times in "Time Entry" line item descriptions.',
-    "settings:when_generating_invoice" => "When generating invoices, use a line item per",
-    "settings:use_utf8_font" => "Use UTF-8 font in PDFs",
-    "settings:use_utf8_font_explanation" => "Use this if characters are broken in your PDFs.",
-    "settings:pdf_attachments" => "PDF Attachments",
-    "settings:pdf_attachments_explanation" => "If checked, Pancake will attach the corresponding PDF to invoice, estimate or proposal emails.",
-    "" => "",
-    "" => "",
-    "" => "",
-    "" => "",
-    "" => "",
-    
-    
-    
+    'settings:time_entry_times' => "Tijd Invoer Tijden",
+    "settings:include_dates_and_times_in_line_items" => 'Voeg data en tijden toe bij een "Tijd Invoer" regel item omschrijving.',
+    "settings:when_generating_invoice" => "Bij het genereren van facturen gebruik een regel per item",
+    "settings:use_utf8_font" => "Gebruik UTF-8 font in PDF's",
+    "settings:use_utf8_font_explanation" => "Gebruik dit als karakters niet goed worden weergegeven in PDF's.",
+    "settings:pdf_attachments" => "PDF Bijlages",
+    "settings:pdf_attachments_explanation" => "Indien aangevinkt, zal Pancake de PDF als bijlage meesturen bij de factuur, inschatting of voorstel e-mails.",
+
     'settings:site_name' => 'Site naam',
     'settings:language' => 'Taal',
     'settings:timezone' => 'Tijdzone',
@@ -910,7 +901,7 @@ Unpaid invoices with no due date are shown based on the date they were created.'
     'partial:partpaidthanks' => "Dit deel van de factuur is betaald. Hartelijk dank.",
     'partial:proceedtopayment' => 'Overgaan tot betaling',
     'partial:topaynowgoto' => 'Om direct te betalen ga naar :1',
-    'partial:pay_part_x_now' => "Pay part #:1 of your invoice now",
+    'partial:pay_part_x_now' => "Betaal deel #:1 van de factuur nu",
     'partial:dueondate' => 'Te betalen voor :1',
     'partial:paymentmethod' => 'Betalingsmethode',
     'partial:paymentdate' => 'Datum betaling',
@@ -956,13 +947,13 @@ Unpaid invoices with no due date are shown based on the date they were created.'
      
     /** Kitchen Area **/
     'kitchen:edit_comment' => 'Wijzig reactie',
-    'kitchen:add_a_comment' => "Add a comment",
+    'kitchen:add_a_comment' => "Reactie toevoegen",
     'kitchen:kitchen_name' => 'Klantgedeelte',
     'kitchen:pleaselogin' => 'Vul a.u.b. uw wachtwoord in om toegang te krijgen tot uw account',
     'kitchen:nocomments' => 'Er zijn nog geen reacties.',
     'kitchen:comment' => 'Reactie',
     'kitchen:comments' => 'Reacties',
-    'kitchen:comments_x'                            => 'Comments (:1)',
+    'kitchen:comments_x' => 'Reacties (:1)',
     'kitchen:file' => 'Bestand',
     'kitchen:submitcomment' => 'Nieuwe reactie',
     'kitchen:attachment' => 'Bijlage',
@@ -981,13 +972,13 @@ Unpaid invoices with no due date are shown based on the date they were created.'
     'kitchen:description' => 'Dit is de url om naar uw klant te zenden om ze toegang te geven tot het klantgedeelte waar ze projecten, facturen, etc. kunnen bekijken.',
     'kitchen:people_in_discussion'	=> 'Mensen in discussie',
     
-    'kitchen:latest_invoice' => 'Latest Invoice',
-    'kitchen:unpaid_balance' => 'Unpaid Balance: :1',
-    'kitchen:total_paid_to_date' => 'Total Paid To Date: :1',
+    'kitchen:latest_invoice' => 'Laatste Factuur',
+    'kitchen:unpaid_balance' => 'Onbetaalde Balans: :1',
+    'kitchen:total_paid_to_date' => 'Totaal Betaald Tot Datum: :1',
 
     /** END Kitchen Area **/
 
-    'store:store' => 'Store',
+    'store:store' => 'Winkel',
     'store:buy' => "Koop ($:1)",
     'store:update' => "Bijwerken",
     'store:install' => "Installeren",
@@ -1006,18 +997,18 @@ Unpaid invoices with no due date are shown based on the date they were created.'
     'store:error1002' => "Er is een probleem opgetreden bij het afschrijven op je creditcard. Probeer het later opnieuw.",
     'store:error1003' => "Je hebt een ongeldig verzoek gedaan.",
     
-    'email_templates:new_invoice' => 'New Invoice',
-    'email_templates:new_estimate' => 'New Estimate',
-    'email_templates:new_proposal' => 'New Proposal',
-    'email_templates:invoice_payment_notification_for_admin' => 'Payment Notification (sent to admin)',
-    'email_templates:invoice_payment_notification_for_client' => 'Payment Receipt Notification (sent to client)',
-    'email_templates:new_ticket' => 'New Ticket',
-    'email_templates:new_ticket_invoice' => 'New Ticket Invoice',
-    'email_templates:ticket_updated' => 'Ticket Update Notification',
-    'email_templates:ticket_status_updated' => 'Ticket Status Update Notification',
-    'email_templates:assigned_to_task' => "Task Assignment Notification",
-    'email_templates:assigned_to_milestone' => "Milestone Assignment Notification",
-    'email_templates:new_comment' => "New Comment Notification",
+    'email_templates:new_invoice' => 'Nieuwe Factuur',
+    'email_templates:new_estimate' => 'Nieuwe Inschatting',
+    'email_templates:new_proposal' => 'Nieuw Voorstel',
+    'email_templates:invoice_payment_notification_for_admin' => 'Betaal Notificatie (verstuurd naar admin)',
+    'email_templates:invoice_payment_notification_for_client' => 'Betaling Ontvangen Notificatie (verstuurd naar klant)',
+    'email_templates:new_ticket' => 'Nieuwe Ticket',
+    'email_templates:new_ticket_invoice' => 'Nieuwe Ticket Factuur',
+    'email_templates:ticket_updated' => 'Ticket Update Notificatie',
+    'email_templates:ticket_status_updated' => 'Ticket Status Update Notificatie',
+    'email_templates:assigned_to_task' => "Task Toewijzing Notificatie",
+    'email_templates:assigned_to_milestone' => "Mijlpaal Toewijzing Notificatie",
+    'email_templates:new_comment' => "Nieuwe Reactie Notificatie",
     
     'global:timer_app' => "Pancake Timer App",
     
